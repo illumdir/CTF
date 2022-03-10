@@ -13,6 +13,8 @@ BurpSuite, ZAProxy => Scanner de platforme web
 Maltego => Reconnaissance passive graphique
 Metagoofil => Reconnaissance passive
 
+yersinia => Pour les protocoles de communication (Cisco et autre)
+
 # BRUTE FORCE
 Avec Hydra :
 ```
