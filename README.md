@@ -3,15 +3,16 @@ Write-up des chall que j'ai réalisé
 
 
 # TOOLS
-phoneinfoga => FrameWork pour OSINT de numero de telephone
-Feroxbuster, dirb, dirbuster, gobuster => fuzz
+FrameWork pour OSINT de numero de telephone => phoneinfoga 
+FUZZ => Feroxbuster, dirb, dirbuster, gobuster
 
-nikto, Nessus, Rapid7, OpenVas => Scanner de vulnerabilitö web
+Scanner de vulnerabilitö web => nikto, Nessus, Rapid7, OpenVas
+Done => fuzz sous-domaine + Port Scan (https://github.com/v4d1/Dome) 
 
-BurpSuite, ZAProxy => Scanner de platforme web
+Scanner de platforme web => BurpSuite, ZAProxy
 
-Maltego => Reconnaissance passive graphique
-Metagoofil => Reconnaissance passive
+Reconnaissance passive graphique => Maltego
+Reconnaissance passive => Metagoofil
 
 yersinia => Pour les protocoles de communication (Cisco et autre)
 
