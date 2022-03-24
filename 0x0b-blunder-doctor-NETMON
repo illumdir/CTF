@@ -1,0 +1,34 @@
+---- BOX  10.10.10.152 => NETMON
+**** nmap
+**** FTP anonymus
+**** port 80 : PRTG
+
+**** on connect au FTP
+**** USERS/Public/user.txt (et boom)
+**** 
+**** PRTG : Network Monitor
+**** interfce web => on cherche le MDP par default
+
+**** On cherche des .tar / ou autre
+**** PAESSLER : a voir
+**** prtgqdmin : (mdp par default ne marche pas)
+
+**** qvec le NMAP on a la version on cherche des CVE
+**** on a une command injection mqis il fqut etre identifié
+**** Avec le FTP on va voir les fichiers de conf de PRTG (on cherche dans la doc)
+**** PRTG Configurqtion.dat et sur les old.dat
+
+**** On grep le .dat et autre pour chercher admin et prtgadmin
+
+**** On a le MDP :)
+**** On s'identifie sur l'interface web ca marche pas
+**** On incremente (avec Bu^p ou autre)
+**** On trouve avec 2019
+
+**** On va utilise Command Injection
+**** on DL l'exploit, on donne en argument les cookies (3 ici)
+**** Sa créé user :)
+
+**** psexec.py user:MDP
+**** On est admin c'est la fete
+
