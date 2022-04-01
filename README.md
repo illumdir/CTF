@@ -61,6 +61,8 @@ droopescan : Scan de site Drupal (comme Wpscan pour workPress)
 
 Cewl : récupere les mots d'un site et fait un dico pour brute force
 
+https://whatsmyname.app/ : recherche de compte a partir d'un pseudo 
+
 --------------
 
 Avoir un shell :
