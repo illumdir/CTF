@@ -43,7 +43,9 @@ curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-
 
 Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
 
+-----Scanner-----
 
+nmapAutomator : git clone https://github.com/21y4d/nmapAutomator.git
 
 -----WEB------
 
