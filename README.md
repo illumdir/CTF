@@ -47,6 +47,7 @@ Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
 
 nmapAutomator : git clone https://github.com/21y4d/nmapAutomator.git
                 sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
+                
 -----WEB------
 
 Nikto : Pentest Web -> check une URL
