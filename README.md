@@ -43,7 +43,7 @@ curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-
 
 Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
 
-crackmapexec : Pentest orienté AD (connexion via plusieurs protocole)
+crackmapexec : Pentest orienté AD (connexion via plusieurs protocole, script, hash, un couteau suisse)
 
 -----Scanner-----
 
