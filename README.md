@@ -45,6 +45,8 @@ Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
 
 crackmapexec : Pentest orienté AD (connexion via plusieurs protocole, script, hash, un couteau suisse)
 
+dnSpy : Reverse Application : https://github.com/dnSpy/dnSpy
+
 -----Scanner-----
 
 nmapAutomator : git clone https://github.com/21y4d/nmapAutomator.git
