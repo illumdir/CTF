@@ -31,6 +31,7 @@ exiftool : metadata du fichier
 hexdump : (-C) transformation en hexa du fichier bin
 
 powershell-empire : comme metaspote, exploit windows
+KrbRelayUp : Escalation privilege sur Windows en exploitant les requêtes LDAP non-signées
 
 recon-ng : Framework de reconnaissance passive (avec API)
 
