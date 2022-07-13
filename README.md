@@ -114,3 +114,9 @@ hydra  -L /usr/share/seclists/Usernames/top_shortlist.txt  -P /usr/share/seclist
 /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt 
 /usr/share/seclist/bitquark-subdomains-top100000.txt
 /usr/share/seclist/subdomains-top1millions-110000.txt
+
+# AD / Windows Tools :
+
+evil-winrm
+BloodHound (avec neo4j)
+
