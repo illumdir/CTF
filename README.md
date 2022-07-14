@@ -122,7 +122,9 @@ hydra  -L /usr/share/seclists/Usernames/top_shortlist.txt  -P /usr/share/seclist
 
 # AD / Windows Tools :
 
-evil-winrm
+evil-winrm : connection a windows (avec un meterpreter)
 
 BloodHound (avec neo4j)
+
+windapsearch : Recherche sur LDAP
 
