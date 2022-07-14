@@ -126,5 +126,8 @@ evil-winrm : connection a windows (avec un meterpreter)
 
 BloodHound (avec neo4j)
 
-windapsearch : Recherche sur LDAP
-
+windapsearch : Recherche sur LDAP (si soucis d'installation faire :
+```
+sudo pip2 install ldap3 
+sudo apt install python3-ldap 
+```
