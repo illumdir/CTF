@@ -72,6 +72,9 @@ Cewl : récupere les mots d'un site et fait un dico pour brute force
 
 https://whatsmyname.app/ : recherche de compte a partir d'un pseudo 
 
+GTFOBins : Exploit de binaire Linux => https://gtfobins.github.io/
+
+
 --------------
 
 Avoir un shell :
