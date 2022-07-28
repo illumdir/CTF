@@ -76,6 +76,8 @@ GTFOBins : Exploit de binaire Linux => https://gtfobins.github.io/
 
 
 --------------
+Netcat Ecoute :
+nc -lvp PORT
 
 Avoir un shell :
 python3 -c 'import pty;pty.spawn("/bin/bash")'
