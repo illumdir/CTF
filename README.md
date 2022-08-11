@@ -79,9 +79,11 @@ https://whatsmyname.app/ : recherche de compte a partir d'un pseudo
 GTFOBins : Exploit de binaire Linux => https://gtfobins.github.io/
 
 
---------------
+------Reverse Shell -----
+rlwrap -caR nc -lvnp $port : Ecoute et stabilise le shell
+
 Netcat Ecoute :
-nc -lvp PORT
+nc -lvnp $port
 
 Avoir un shell :
 python3 -c 'import pty;pty.spawn("/bin/bash")'
