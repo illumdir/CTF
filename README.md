@@ -49,6 +49,9 @@ crackmapexec : Pentest orienté AD (connexion via plusieurs protocole, script, h
 
 dnSpy : Reverse Application : https://github.com/dnSpy/dnSpy
 
+------SMB------
+enum4linux.py : Fait tout un tas de test sur le SMB
+
 -----Scanner-----
 
 nmapAutomator : git clone https://github.com/21y4d/nmapAutomator.git
