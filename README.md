@@ -37,6 +37,7 @@ Discover : Framework de reconnaissance passive (avec API) + recon ng + google do
 pypykatz / Empire : Check des fichiers pour monter les privilèges WINDOWS
 
 linuxprivchecker et linpeas : Check des fichiers pour monter les privilèges LINUX
+pspy : Un peu comme Linpeas
 curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh | sh
 
 Steghide : Extraction de fichier a partir d'un autre fichier et passphrase
