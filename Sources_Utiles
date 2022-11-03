@@ -5,3 +5,5 @@ Scanner personnaliser (A tester mais ca a l'air cool) => https://gitlab.com/onem
 Création de structure =>  mkdir 00-docs 01-Scans 02-Loots 03-Scripts 99-Reporting 98-Screenshots tmp && touch Report.md Tests.md Vulns.md
 urlencore => python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"
 
+# Plugin Burp
+Hackvector => Balise pour encoder
