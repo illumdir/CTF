@@ -4,6 +4,8 @@ hashID mais en mieux => https://github.com/noraj/haiti
 
 Comme Man mais => tldr 
 
+Connaitre les commandes => https://cheat.sh/
+
 ## Alias
 Création de structure => ``` mkdir 00-docs 01-Scans 02-Loots 03-Scripts 99-Reporting 98-Screenshots tmp && touch Report.md Tests.md Vulns.md```
 
