@@ -1,5 +1,5 @@
 Scanner personnaliser (A tester mais ca a l'air cool) => https://gitlab.com/onemask/nmaper
-
+hashID mais en mieux => https://github.com/noraj/haiti
 
 # Alias
 Création de structure =>  mkdir 00-docs 01-Scans 02-Loots 03-Scripts 99-Reporting 98-Screenshots tmp && touch Report.md Tests.md Vulns.md
