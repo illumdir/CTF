@@ -4,6 +4,7 @@ FUZZ => Feroxbuster, dirb, dirbuster, gobuster
 
 Scanner de vulnerabilitö web => nikto, Nessus, Rapid7, OpenVas
 Done => fuzz sous-domaine + Port Scan (https://github.com/v4d1/Dome) 
+wfuzz -H 'Host: FUZZ.****.com' -u 'https://10.10.10.113' -w '/usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt' --hc 301
 
 Scanner de platforme web => BurpSuite, ZAProxy
 
