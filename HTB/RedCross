@@ -30,6 +30,7 @@
 	Meme cookies
 	white list notre IP
 	Creation user ssh :
+		On test le SSH
 
 6/
 	nmaper -i 10.10.10.113 -o nmaper-10.10.10.113
