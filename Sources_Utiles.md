@@ -6,6 +6,8 @@ Comme Man mais => tldr
 
 Connaitre les commandes => https://cheat.sh/
 
+Pour envoyer des données en POST ou GET : https://requestbin.com
+
 ## Alias
 Création de structure => ``` mkdir 00-docs 01-Scans 02-Loots 03-Scripts 99-Reporting 98-Screenshots tmp && touch Report.md Tests.md Vulns.md```
 
