@@ -49,6 +49,9 @@ dnSpy : Reverse Application : https://github.com/dnSpy/dnSpy
 
 swaks : Permet d'envoyer des mails
 
+ffuf -c -w /usr/share/wordlists/dirb/big.txt  -u https://XXX/XXX/FUZZ  -mc 200,301 -H $'Sec-Fetch-Site: same-origin' -H $'Sec-Fetch-User: ?1' -H $'Sec-Gpc: 1' -H $'Te: trailers' -H $'Connection: close' \
+    -b $'JSESSIONID=3B089837XXXXXXXA3012685XXXXB8A; GLog=%XXXXXX'
+
 ------SMB------
 
 enum4linux.py : Fait tout un tas de test sur le SMB
