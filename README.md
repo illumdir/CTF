@@ -75,6 +75,8 @@ wpscan : scan wordpress -> Puissant
 
 curl : requete vers site web
 
+sslyze : Analyse et donne tout un tas d'info (certificat, cypher...)
+
 droopescan : Scan de site Drupal (comme Wpscan pour workPress)
 
 Cewl : récupere les mots d'un site et fait un dico pour brute force
