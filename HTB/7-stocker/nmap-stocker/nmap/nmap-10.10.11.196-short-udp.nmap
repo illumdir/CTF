@@ -1,0 +1,9 @@
+# Nmap 7.92 scan initiated Thu Mar 23 22:49:45 2023 as: nmap -Pn -v --open -T4 -sU --max-retries 1 --min-rate 200 -oA nmap-stocker/nmap/nmap-10.10.11.196-short-udp 10.10.11.196
+Warning: 10.10.11.196 giving up on port because retransmission cap hit (1).
+Nmap scan report for stocker.htb (10.10.11.196)
+Host is up (0.033s latency).
+All 1000 scanned ports on stocker.htb (10.10.11.196) are in ignored states.
+Not shown: 986 open|filtered udp ports (no-response), 14 closed udp ports (port-unreach)
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Thu Mar 23 22:49:53 2023 -- 1 IP address (1 host up) scanned in 8.36 seconds

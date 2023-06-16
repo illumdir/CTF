@@ -1,0 +1,11 @@
+# Nmap 7.92 scan initiated Thu May 25 18:54:15 2023 as: nmap -Pn -v --open -T4 -sT -p- --max-retries 1 --max-rate 200 -oA soccer/nmap/nmap-10.10.11.194-full-tcp 10.10.11.194
+Nmap scan report for http:**player.htb* (10.10.11.194)
+Host is up (0.029s latency).
+Not shown: 65200 closed tcp ports (conn-refused), 333 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+22/tcp   open  ssh
+9091/tcp open  xmltec-xmlmail
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Thu May 25 18:59:45 2023 -- 1 IP address (1 host up) scanned in 330.01 seconds

@@ -1,0 +1,290 @@
+----------| SCAN START |----------
+
+[*] Target => [1m[94m10.10.11.194[0m
+[*] Output Folder => [1m[94msoccer[0m
+[*] Min Rate => [1m[94m200[0m
+
+[*] Starting quick TCP scan
+[*] Starting default TCP scan
+[*] Starting full TCP scan
+[+] Ports found: [1m[92m22,9091[0m
+[*] Starting short UDP scan
+
+[*] Starting service fingerprinting
+[1m[94m
+PORT     STATE SERVICE         VERSION
+22/tcp   open  ssh             OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+9091/tcp open  xmltec-xmlmail?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9091-TCP:V=7.92%I=7%D=5/25%Time=646F9411%P=x86_64-pc-linux-gnu%r(in
+SF:formix,2F,"HTTP/1\.1 400 Bad Request
+Connection: close
+SF:
+
+")%r(drda,2F,"HTTP/1\.1 400 Bad Request
+Connection:\x
+SF:20close
+
+")%r(GetRequest,168,"HTTP/1\.1 404 Not Found\
+SF:nContent-Security-Policy: default-src 'none'
+X-Content-Type-Op
+SF:tions: nosniff
+Content-Type: text/html; charset=utf-8
+Co
+SF:ntent-Length: 139
+Date: Thu, 25 May 2023 17:00:02\
+SF:x20GMT
+Connection: close
+
+<!DOCTYPE html>
+<html lang
+SF:=\"en\">
+<head>
+<meta charset=\"utf-8\">
+<title>Error</title>
+</
+SF:head>
+<body>
+<pre>Cannot GET /</pre>
+</body>
+</html>
+")%r(HT
+SF:TPOptions,16C,"HTTP/1\.1 404 Not Found
+Content-Security-Pol
+SF:icy: default-src 'none'
+X-Content-Type-Options: nosniff
+
+SF:Content-Type: text/html; charset=utf-8
+Content-Length: 143\
+SF:r
+Date: Thu, 25 May 2023 17:00:02 GMT
+Connection:
+SF: close
+
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<me
+SF:ta charset=\"utf-8\">
+<title>Error</title>
+</head>
+<body>
+<pre>C
+SF:annot OPTIONS /</pre>
+</body>
+</html>
+")%r(RTSPRequest,16C,"HT
+SF:TP/1\.1 404 Not Found
+Content-Security-Policy: default-s
+SF:rc 'none'
+X-Content-Type-Options: nosniff
+Content-Type: 
+SF:text/html; charset=utf-8
+Content-Length: 143
+Date: Thu,\
+SF:x2025 May 2023 17:00:02 GMT
+Connection: close
+
+
+SF:<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"u
+SF:tf-8\">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot OPTIONS\
+SF:x20/</pre>
+</body>
+</html>
+")%r(RPCCheck,2F,"HTTP/1\.1 400 Bad
+SF: Request
+Connection: close
+
+")%r(DNSVersionBindReqTCP,2F
+SF:,"HTTP/1\.1 400 Bad Request
+Connection: close
+
+")%
+SF:r(DNSStatusRequestTCP,2F,"HTTP/1\.1 400 Bad Request
+Connect
+SF:ion: close
+
+")%r(Help,2F,"HTTP/1\.1 400 Bad Request
+SF:
+Connection: close
+
+")%r(SSLSessionReq,2F,"HTTP/1\.1 400\x
+SF:20Bad Request
+Connection: close
+
+");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel[0m
+
+[*] Running NSE 'default', 'vuln' and 'safe' scripts
+[1m[94m
+PORT     STATE SERVICE         VERSION
+22/tcp   open  ssh             OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.2p1: 
+|     	CVE-2020-15778	6.8	https://vulners.com/cve/CVE-2020-15778
+|     	C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	6.8	https://vulners.com/githubexploit/C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	*EXPLOIT*
+|     	10213DBE-F683-58BB-B6D3-353173626207	6.8	https://vulners.com/githubexploit/10213DBE-F683-58BB-B6D3-353173626207	*EXPLOIT*
+|     	CVE-2020-12062	5.0	https://vulners.com/cve/CVE-2020-12062
+|     	CVE-2021-28041	4.6	https://vulners.com/cve/CVE-2021-28041
+|     	CVE-2021-41617	4.4	https://vulners.com/cve/CVE-2021-41617
+|     	CVE-2020-14145	4.3	https://vulners.com/cve/CVE-2020-14145
+|     	CVE-2016-20012	4.3	https://vulners.com/cve/CVE-2016-20012
+|_    	CVE-2021-36368	2.6	https://vulners.com/cve/CVE-2021-36368
+9091/tcp open  xmltec-xmlmail?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, SSLSessionReq, drda, informix: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 404 Not Found
+|     Content-Security-Policy: default-src 'none'
+|     X-Content-Type-Options: nosniff
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 139
+|     Date: Thu, 25 May 2023 17:00:17 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error</title>
+|     </head>
+|     <body>
+|     <pre>Cannot GET /</pre>
+|     </body>
+|     </html>
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 404 Not Found
+|     Content-Security-Policy: default-src 'none'
+|     X-Content-Type-Options: nosniff
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 143
+|     Date: Thu, 25 May 2023 17:00:17 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error</title>
+|     </head>
+|     <body>
+|     <pre>Cannot OPTIONS /</pre>
+|     </body>
+|_    </html>
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9091-TCP:V=7.92%I=7%D=5/25%Time=646F941F%P=x86_64-pc-linux-gnu%r(in
+SF:formix,2F,"HTTP/1\.1 400 Bad Request
+Connection: close
+SF:
+
+")%r(drda,2F,"HTTP/1\.1 400 Bad Request
+Connection:\x
+SF:20close
+
+")%r(GetRequest,168,"HTTP/1\.1 404 Not Found\
+SF:nContent-Security-Policy: default-src 'none'
+X-Content-Type-Op
+SF:tions: nosniff
+Content-Type: text/html; charset=utf-8
+Co
+SF:ntent-Length: 139
+Date: Thu, 25 May 2023 17:00:17\
+SF:x20GMT
+Connection: close
+
+<!DOCTYPE html>
+<html lang
+SF:=\"en\">
+<head>
+<meta charset=\"utf-8\">
+<title>Error</title>
+</
+SF:head>
+<body>
+<pre>Cannot GET /</pre>
+</body>
+</html>
+")%r(HT
+SF:TPOptions,16C,"HTTP/1\.1 404 Not Found
+Content-Security-Pol
+SF:icy: default-src 'none'
+X-Content-Type-Options: nosniff
+
+SF:Content-Type: text/html; charset=utf-8
+Content-Length: 143\
+SF:r
+Date: Thu, 25 May 2023 17:00:17 GMT
+Connection:
+SF: close
+
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<me
+SF:ta charset=\"utf-8\">
+<title>Error</title>
+</head>
+<body>
+<pre>C
+SF:annot OPTIONS /</pre>
+</body>
+</html>
+")%r(RTSPRequest,16C,"HT
+SF:TP/1\.1 404 Not Found
+Content-Security-Policy: default-s
+SF:rc 'none'
+X-Content-Type-Options: nosniff
+Content-Type: 
+SF:text/html; charset=utf-8
+Content-Length: 143
+Date: Thu,\
+SF:x2025 May 2023 17:00:17 GMT
+Connection: close
+
+
+SF:<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"u
+SF:tf-8\">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot OPTIONS\
+SF:x20/</pre>
+</body>
+</html>
+")%r(RPCCheck,2F,"HTTP/1\.1 400 Bad
+SF: Request
+Connection: close
+
+")%r(DNSVersionBindReqTCP,2F
+SF:,"HTTP/1\.1 400 Bad Request
+Connection: close
+
+")%
+SF:r(DNSStatusRequestTCP,2F,"HTTP/1\.1 400 Bad Request
+Connect
+SF:ion: close
+
+")%r(Help,2F,"HTTP/1\.1 400 Bad Request
+SF:
+Connection: close
+
+")%r(SSLSessionReq,2F,"HTTP/1\.1 400\x
+SF:20Bad Request
+Connection: close
+
+");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel[0m
+
+[*] Cleaning up
+
+----------| SCAN FINISHED in 386 seconds |----------

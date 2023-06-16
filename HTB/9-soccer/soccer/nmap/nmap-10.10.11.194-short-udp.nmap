@@ -1,0 +1,9 @@
+# Nmap 7.92 scan initiated Thu May 25 18:59:45 2023 as: nmap -Pn -v --open -T4 -sU --max-retries 1 --min-rate 200 -oA soccer/nmap/nmap-10.10.11.194-short-udp 10.10.11.194
+Warning: 10.10.11.194 giving up on port because retransmission cap hit (1).
+Nmap scan report for soccer.htb (10.10.11.194)
+Host is up (0.028s latency).
+All 1000 scanned ports on soccer.htb (10.10.11.194) are in ignored states.
+Not shown: 988 open|filtered udp ports (no-response), 12 closed udp ports (port-unreach)
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Thu May 25 18:59:54 2023 -- 1 IP address (1 host up) scanned in 8.55 seconds

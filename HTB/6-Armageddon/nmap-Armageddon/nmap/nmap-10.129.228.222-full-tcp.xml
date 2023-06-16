@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Thu Mar 23 20:35:20 2023 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-Armageddon/nmap/nmap-10.129.228.222-full-tcp 10.129.228.222 -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-Armageddon/nmap/nmap-10.129.228.222-full-tcp 10.129.228.222" start="1679600120" startstr="Thu Mar 23 20:35:20 2023" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1679600120"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1679600120"/>
+<taskbegin task="Connect Scan" time="1679600120"/>
+<taskprogress task="Connect Scan" time="1679600151" percent="9.38" remaining="300" etc="1679600451"/>
+<taskprogress task="Connect Scan" time="1679600181" percent="18.53" remaining="269" etc="1679600449"/>
+<taskprogress task="Connect Scan" time="1679600211" percent="27.69" remaining="238" etc="1679600449"/>
+<taskprogress task="Connect Scan" time="1679600241" percent="36.84" remaining="208" etc="1679600448"/>
+<taskprogress task="Connect Scan" time="1679600271" percent="45.94" remaining="178" etc="1679600449"/>
+<taskprogress task="Connect Scan" time="1679600301" percent="55.09" remaining="148" etc="1679600449"/>
+<taskprogress task="Connect Scan" time="1679600331" percent="64.25" remaining="118" etc="1679600448"/>
+<taskprogress task="Connect Scan" time="1679600361" percent="73.40" remaining="88" etc="1679600448"/>
+<taskprogress task="Connect Scan" time="1679600391" percent="82.54" remaining="58" etc="1679600448"/>
+<taskend task="Connect Scan" time="1679600448" extrainfo="65535 total ports"/>
+<host starttime="1679600120" endtime="1679600448"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.228.222" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="conn-refused" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+</ports>
+<times srtt="31730" rttvar="3198" to="100000"/>
+</host>
+<runstats><finished time="1679600448" timestr="Thu Mar 23 20:40:48 2023" summary="Nmap done at Thu Mar 23 20:40:48 2023; 1 IP address (1 host up) scanned in 328.58 seconds" elapsed="328.58" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

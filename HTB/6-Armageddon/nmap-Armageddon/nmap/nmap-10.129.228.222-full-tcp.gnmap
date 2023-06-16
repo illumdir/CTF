@@ -1,0 +1,5 @@
+# Nmap 7.92 scan initiated Thu Mar 23 20:35:20 2023 as: nmap -Pn -v --open -T4 -sT -p- --max-retries 1 --max-rate 200 -oA nmap-Armageddon/nmap/nmap-10.129.228.222-full-tcp 10.129.228.222
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.129.228.222 ()	Status: Up
+Host: 10.129.228.222 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///	Ignored State: closed (65533)
+# Nmap done at Thu Mar 23 20:40:48 2023 -- 1 IP address (1 host up) scanned in 328.58 seconds

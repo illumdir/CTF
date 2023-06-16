@@ -1,0 +1,54 @@
+----------| SCAN START |----------
+
+[*] Target => [1m[94m10.10.11.196[0m
+[*] Output Folder => [1m[94mnmap-stocker[0m
+[*] Min Rate => [1m[94m200[0m
+
+[*] Starting quick TCP scan
+[+] Ports found: [1m[92m22,80[0m
+[*] Starting default TCP scan
+[*] Starting full TCP scan
+[*] Starting short UDP scan
+
+[*] Starting service fingerprinting
+[1m[94m
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel[0m
+
+[*] Running NSE 'default', 'vuln' and 'safe' scripts
+[1m[94m
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.2p1: 
+|     	CVE-2020-15778	6.8	https://vulners.com/cve/CVE-2020-15778
+|     	C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	6.8	https://vulners.com/githubexploit/C94132FD-1FA5-5342-B6EE-0DAF45EEFFE3	*EXPLOIT*
+|     	10213DBE-F683-58BB-B6D3-353173626207	6.8	https://vulners.com/githubexploit/10213DBE-F683-58BB-B6D3-353173626207	*EXPLOIT*
+|     	CVE-2020-12062	5.0	https://vulners.com/cve/CVE-2020-12062
+|     	CVE-2021-28041	4.6	https://vulners.com/cve/CVE-2021-28041
+|     	CVE-2021-41617	4.4	https://vulners.com/cve/CVE-2021-41617
+|     	CVE-2020-14145	4.3	https://vulners.com/cve/CVE-2020-14145
+|     	CVE-2016-20012	4.3	https://vulners.com/cve/CVE-2016-20012
+|_    	CVE-2021-36368	2.6	https://vulners.com/cve/CVE-2021-36368
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2011-3192  BID:49303
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.tenable.com/plugins/nessus/55976
+|       https://seclists.org/fulldisclosure/2011/Aug/175
+|       https://www.securityfocus.com/bid/49303
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel[0m
+
+[*] Cleaning up
+
+----------| SCAN FINISHED in 372 seconds |----------
