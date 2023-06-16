@@ -1,0 +1,9 @@
+# Nmap 7.92 scan initiated Tue Nov  8 17:12:50 2022 as: nmap -Pn -v --open -T4 -sU --max-retries 1 --min-rate 200 -oA nmaper-10.10.10.113/nmap/nmap-10.10.10.113-short-udp 10.10.10.113
+Warning: 10.10.10.113 giving up on port because retransmission cap hit (1).
+Nmap scan report for admin.redcross.htb (10.10.10.113)
+Host is up (0.055s latency).
+All 1000 scanned ports on admin.redcross.htb (10.10.10.113) are in ignored states.
+Not shown: 987 open|filtered udp ports (no-response), 13 closed udp ports (port-unreach)
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Tue Nov  8 17:12:58 2022 -- 1 IP address (1 host up) scanned in 8.08 seconds

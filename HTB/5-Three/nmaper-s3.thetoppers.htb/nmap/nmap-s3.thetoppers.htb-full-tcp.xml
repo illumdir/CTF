@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Mon Nov 14 23:26:02 2022 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmaper-s3.thetoppers.htb/nmap/nmap-s3.thetoppers.htb-full-tcp s3.thetoppers.htb -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmaper-s3.thetoppers.htb/nmap/nmap-s3.thetoppers.htb-full-tcp s3.thetoppers.htb" start="1668464762" startstr="Mon Nov 14 23:26:02 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Connect Scan" time="1668464762"/>
+<taskprogress task="Connect Scan" time="1668464793" percent="9.30" remaining="303" etc="1668465095"/>
+<taskprogress task="Connect Scan" time="1668464823" percent="18.45" remaining="270" etc="1668465093"/>
+<taskprogress task="Connect Scan" time="1668464853" percent="27.60" remaining="239" etc="1668465092"/>
+<taskprogress task="Connect Scan" time="1668464883" percent="36.72" remaining="209" etc="1668465091"/>
+<taskprogress task="Connect Scan" time="1668464913" percent="45.87" remaining="179" etc="1668465091"/>
+<taskprogress task="Connect Scan" time="1668464943" percent="55.02" remaining="148" etc="1668465091"/>
+<taskprogress task="Connect Scan" time="1668464973" percent="64.16" remaining="118" etc="1668465091"/>
+<taskprogress task="Connect Scan" time="1668465003" percent="73.29" remaining="88" etc="1668465091"/>
+<taskprogress task="Connect Scan" time="1668465033" percent="82.44" remaining="58" etc="1668465091"/>
+<taskend task="Connect Scan" time="1668465091" extrainfo="65535 total ports"/>
+<host starttime="1668464762" endtime="1668465091"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.94.212" addrtype="ipv4"/>
+<hostnames>
+<hostname name="s3.thetoppers.htb" type="user"/>
+<hostname name="thetoppers.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="conn-refused" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+</ports>
+<times srtt="27993" rttvar="1264" to="100000"/>
+</host>
+<runstats><finished time="1668465091" timestr="Mon Nov 14 23:31:31 2022" summary="Nmap done at Mon Nov 14 23:31:31 2022; 1 IP address (1 host up) scanned in 328.62 seconds" elapsed="328.62" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

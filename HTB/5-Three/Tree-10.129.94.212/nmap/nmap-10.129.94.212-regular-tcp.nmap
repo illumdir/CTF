@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Mon Nov 14 20:49:54 2022 as: nmap -Pn -v --open -sT --min-rate 200 --max-retries 1 -oA Tree-10.129.94.212/nmap/nmap-10.129.94.212-regular-tcp 10.129.94.212
+Nmap scan report for 10.129.94.212
+Host is up (0.035s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Mon Nov 14 20:49:55 2022 -- 1 IP address (1 host up) scanned in 0.52 seconds

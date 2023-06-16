@@ -1,0 +1,5 @@
+# Nmap 7.92 scan initiated Tue Nov  8 11:33:55 2022 as: nmap -Pn -v --open -T4 -sT -p- --max-retries 1 --max-rate 200 -oA nmap-redcross2/nmap/nmap-10.10.10.113-full-tcp 10.10.10.113
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.113 (admin.redcross.htb)	Status: Up
+Host: 10.10.10.113 (admin.redcross.htb)	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///, 443/open/tcp//https///, 1025/open/tcp//NFS-or-IIS///, 5432/open/tcp//postgresql///
+# Nmap done at Tue Nov  8 11:39:25 2022 -- 1 IP address (1 host up) scanned in 330.24 seconds

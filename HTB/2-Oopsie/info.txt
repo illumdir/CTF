@@ -1,0 +1,11 @@
+admin:MEGACORP_4dm1n!!
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+robert:M3g4C0rpUs3r!   => USER FLAG :  f2c74ee8db798XXXXXXXXXX81
+
+
+Flag root : af13bXXXXXXXXXXXXcf
+
+fichier backup.zip : 741852963
+
+dans le fichier index.php => le MDP : 2cb42f8734ea607eefed3b70af13bbd3 = qwerty789

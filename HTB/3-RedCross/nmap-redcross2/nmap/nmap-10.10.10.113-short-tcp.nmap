@@ -1,0 +1,14 @@
+# Nmap 7.92 scan initiated Tue Nov  8 11:33:52 2022 as: nmap -Pn -v --open -T4 -sT -F -oA nmap-redcross2/nmap/nmap-10.10.10.113-short-tcp 10.10.10.113
+Nmap scan report for admin.redcross.htb (10.10.10.113)
+Host is up (0.062s latency).
+Not shown: 94 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+1025/tcp open  NFS-or-IIS
+5432/tcp open  postgresql
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Tue Nov  8 11:33:54 2022 -- 1 IP address (1 host up) scanned in 1.36 seconds

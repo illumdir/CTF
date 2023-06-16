@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Mon Nov  7 17:40:54 2022 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-redcross/nmap/nmap-10.10.10.113-full-tcp 10.10.10.113 -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-redcross/nmap/nmap-10.10.10.113-full-tcp 10.10.10.113" start="1667839254" startstr="Mon Nov  7 17:40:54 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Connect Scan" time="1667839254"/>
+<taskprogress task="Connect Scan" time="1667839285" percent="4.61" remaining="643" etc="1667839927"/>
+<taskprogress task="Connect Scan" time="1667839315" percent="9.17" remaining="605" etc="1667839920"/>
+<taskprogress task="Connect Scan" time="1667839348" percent="14.18" remaining="569" etc="1667839917"/>
+<taskprogress task="Connect Scan" time="1667839381" percent="19.20" remaining="535" etc="1667839916"/>
+<taskprogress task="Connect Scan" time="1667839414" percent="24.21" remaining="501" etc="1667839915"/>
+<taskprogress task="Connect Scan" time="1667839447" percent="29.23" remaining="468" etc="1667839914"/>
+<taskprogress task="Connect Scan" time="1667839480" percent="34.25" remaining="434" etc="1667839914"/>
+<taskprogress task="Connect Scan" time="1667839513" percent="39.26" remaining="401" etc="1667839914"/>
+<taskprogress task="Connect Scan" time="1667839546" percent="44.28" remaining="368" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839582" percent="49.75" remaining="332" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839618" percent="55.22" remaining="296" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839651" percent="60.24" remaining="263" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839687" percent="65.71" remaining="226" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839720" percent="70.73" remaining="193" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839753" percent="75.74" remaining="160" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839786" percent="80.76" remaining="127" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839819" percent="85.78" remaining="94" etc="1667839913"/>
+<taskprogress task="Connect Scan" time="1667839852" percent="90.79" remaining="61" etc="1667839913"/>
+<taskend task="Connect Scan" time="1667839912" extrainfo="65535 total ports"/>
+<host starttime="1667839254" endtime="1667839912"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.113" addrtype="ipv4"/>
+<hostnames>
+<hostname name="redcross.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="filtered" count="65532">
+<extrareasons reason="no-response" count="65532" proto="tcp" ports="1-21,23-79,81-442,444-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="38943" rttvar="9962" to="100000"/>
+</host>
+<runstats><finished time="1667839912" timestr="Mon Nov  7 17:51:52 2022" summary="Nmap done at Mon Nov  7 17:51:52 2022; 1 IP address (1 host up) scanned in 658.06 seconds" elapsed="658.06" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

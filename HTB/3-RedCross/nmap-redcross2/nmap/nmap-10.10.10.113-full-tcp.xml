@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Nov  8 11:33:55 2022 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-redcross2/nmap/nmap-10.10.10.113-full-tcp 10.10.10.113 -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA nmap-redcross2/nmap/nmap-10.10.10.113-full-tcp 10.10.10.113" start="1667903635" startstr="Tue Nov  8 11:33:55 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Connect Scan" time="1667903635"/>
+<taskprogress task="Connect Scan" time="1667903666" percent="9.37" remaining="301" etc="1667903966"/>
+<taskprogress task="Connect Scan" time="1667903696" percent="18.52" remaining="269" etc="1667903964"/>
+<taskprogress task="Connect Scan" time="1667903726" percent="27.65" remaining="239" etc="1667903964"/>
+<taskprogress task="Connect Scan" time="1667903756" percent="36.69" remaining="209" etc="1667903965"/>
+<taskprogress task="Connect Scan" time="1667903786" percent="45.66" remaining="180" etc="1667903966"/>
+<taskprogress task="Connect Scan" time="1667903816" percent="54.82" remaining="150" etc="1667903965"/>
+<taskprogress task="Connect Scan" time="1667903846" percent="63.97" remaining="119" etc="1667903965"/>
+<taskprogress task="Connect Scan" time="1667903876" percent="73.12" remaining="89" etc="1667903965"/>
+<taskprogress task="Connect Scan" time="1667903906" percent="82.23" remaining="59" etc="1667903965"/>
+<taskend task="Connect Scan" time="1667903965" extrainfo="65535 total ports"/>
+<host starttime="1667903635" endtime="1667903965"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.113" addrtype="ipv4"/>
+<hostnames>
+<hostname name="admin.redcross.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65375">
+<extrareasons reason="conn-refused" count="65375" proto="tcp" ports="1-20,23-79,81-95,97-442,444-792,794-987,989-1024,1026-1126,1128-1333,1335-1411,1413-2023,2025-2458,2460-2490,2492-2866,2868-3184,3186-3659,3661-3886,3888-3934,3936-4111,4113-4400,4402-5097,5099-5431,5433-5497,5499-5722,5724-6170,6172-6280,6282-6955,6957-7975,7977-8380,8382-9178,9180-9737,9739-9757,9759-10113,10115-10161,10163-10561,10563-10872,10874-11800,11802-11925,11927-12303,12305-14647,14649-14671,14673-15266,15268-15534,15536-15640,15642-18211,18213-18811,18813-19501,19503-20500,20502-20658,20660-21819,21821-21930,21932-22632,22634-22712,22714-22726,22728-24019,24021-24555,24557-24632,24634-24834,24836-24937,24939-25135,25137-25190,25192-26283,26285-27045,27047-27456,27458-27817,27819-28394,28396-28955,28957-28993,28995-29229,29231-30244,30246-30357,30359-30534,30536-30815,30817,30819-31236,31238-31425,31427-32046,32048-32579,32581-32718,32720-32883,32885-32911,32913-32977,32979-33286,33288-33560,33562-34252,34254-35003,35005-35015,35017-36487,36489-37220,37222-37431,37433-37628,37630-38116,38118-38681,38683-39055,39057-39437,39439-40087,40089-40288,40290-40902,40904-41579,41581-42840,42842-42956,42958-43008,43010-43093,43095-43259,43261-43602,43604-43963,43965-44439,44441-44526,44528-44800,44802-45218,45220-45502,45504-45865,45867-45932,45934-47088,47090-47148,47150-47427,47429-49459,49461-49562,49564-49605,49607-49930,49932-50595,50597-51022,51024-52166,52168-52432,52434-53706,53708-53767,53769-53841,53843-53976,53978-54311,54313-55002,55004-55067,55069-55498,55500-55792,55794-56275,56277-57303,57305-58066,58068-58130,58132-58163,58165-58580,58582-59544,59546-59944,59946-60173,60175-60724,60726-60800,60802-61119,61121-61876,61878-61919,61921-62045,62047-62347,62349-62411,62413-62571,62573-63256,63258-63478,63480-63519,63521-63914,63916-64067,64069-64098,64100-64960,64962-65378,65380-65535"/>
+</extraports>
+<extraports state="filtered" count="154">
+<extrareasons reason="no-response" count="154" proto="tcp" ports="96,793,988,1127,1334,1412,2024,2459,2491,2867,3185,3660,3887,3935,4112,4401,5098,5498,5723,6171,6281,6956,7976,8381,9179,9738,9758,10114,10162,10562,10873,11801,11926,12304,14648,14672,15267,15535,15641,18212,18812,19502,20501,20659,21820,21931,22633,22713,22727,24020,24556,24633,24835,24938,25136,25191,26284,27046,27457,27818,28395,28956,28994,29230,30245,30358,30535,30816,30818,31237,31426,32047,32580,32719,32884,32912,32978,33287,33561,34253,35004,35016,36488,37221,37432,37629,38117,38682,39056,39438,40088,40289,40903,41580,42841,42957,43009,43094,43260,43603,43964,44440,44527,44801,45219,45503,45866,45933,47089,47149,47428,49460,49563,49606,49931,50596,51023,52167,52433,53707,53768,53842,53977,54312,55003,55068,55499,55793,56276,57304,58067,58131,58164,58581,59545,59945,60174,60725,60801,61120,61877,61920,62046,62348,62412,62572,63257,63479,63520,63915,64068,64099,64961,65379"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1025"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="NFS-or-IIS" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5432"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="postgresql" method="table" conf="3"/></port>
+</ports>
+<times srtt="40893" rttvar="9459" to="100000"/>
+</host>
+<runstats><finished time="1667903965" timestr="Tue Nov  8 11:39:25 2022" summary="Nmap done at Tue Nov  8 11:39:25 2022; 1 IP address (1 host up) scanned in 330.24 seconds" elapsed="330.24" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,5 @@
+# Nmap 7.92 scan initiated Wed Nov  9 17:38:03 2022 as: nmap -Pn -v --open -T4 -sT -p- --max-retries 1 --max-rate 200 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-full-tcp 10.10.10.95
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.95 ()	Status: Up
+Host: 10.10.10.95 ()	Ports: 8080/open/tcp//http-proxy///	Ignored State: filtered (65534)
+# Nmap done at Wed Nov  9 18:42:35 2022 -- 1 IP address (1 host up) scanned in 3872.03 seconds

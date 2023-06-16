@@ -1,0 +1,8 @@
+# Nmap 7.92 scan initiated Mon Nov  7 17:51:52 2022 as: nmap -Pn -v --open -T4 -sU --max-retries 1 --min-rate 200 -oA nmap-redcross/nmap/nmap-10.10.10.113-short-udp 10.10.10.113
+Nmap scan report for redcross.htb (10.10.10.113)
+Host is up.
+All 1000 scanned ports on redcross.htb (10.10.10.113) are in ignored states.
+Not shown: 1000 open|filtered udp ports (no-response)
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Mon Nov  7 17:52:03 2022 -- 1 IP address (1 host up) scanned in 10.69 seconds

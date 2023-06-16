@@ -1,0 +1,12 @@
+# Nmap 7.92 scan initiated Wed Nov  9 17:38:03 2022 as: nmap -Pn -v --open -T4 -sT -p- --max-retries 1 --max-rate 200 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-full-tcp 10.10.10.95
+Increasing send delay for 10.10.10.95 from 0 to 5 due to 11 out of 21 dropped probes since last increase.
+Increasing send delay for 10.10.10.95 from 5 to 10 due to 11 out of 23 dropped probes since last increase.
+Nmap scan report for 10.10.10.95
+Host is up (0.045s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+8080/tcp open  http-proxy
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Nov  9 18:42:35 2022 -- 1 IP address (1 host up) scanned in 3872.03 seconds

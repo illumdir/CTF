@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Wed Nov  9 17:38:03 2022 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-full-tcp 10.10.10.95 -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-full-tcp 10.10.10.95" start="1668011883" startstr="Wed Nov  9 17:38:03 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1668011883"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1668011883"/>
+<taskbegin task="Connect Scan" time="1668011883"/>
+<taskprogress task="Connect Scan" time="1668011914" percent="4.09" remaining="728" etc="1668012641"/>
+<taskprogress task="Connect Scan" time="1668011944" percent="5.44" remaining="1060" etc="1668013004"/>
+<taskprogress task="Connect Scan" time="1668011974" percent="6.20" remaining="1377" etc="1668013350"/>
+<taskprogress task="Connect Scan" time="1668012004" percent="6.89" remaining="1636" etc="1668013639"/>
+<taskprogress task="Connect Scan" time="1668012034" percent="7.50" remaining="1862" etc="1668013896"/>
+<taskprogress task="Connect Scan" time="1668012064" percent="8.36" remaining="1983" etc="1668014047"/>
+<taskprogress task="Connect Scan" time="1668012094" percent="9.00" remaining="2134" etc="1668014228"/>
+<taskprogress task="Connect Scan" time="1668012133" percent="9.96" remaining="2261" etc="1668014394"/>
+<taskprogress task="Connect Scan" time="1668012199" percent="11.69" remaining="2388" etc="1668014586"/>
+<taskprogress task="Connect Scan" time="1668012382" percent="16.51" remaining="2524" etc="1668014906"/>
+<taskprogress task="Connect Scan" time="1668013012" percent="32.30" remaining="2366" etc="1668015378"/>
+<taskprogress task="Connect Scan" time="1668013249" percent="38.44" remaining="2188" etc="1668015436"/>
+<taskprogress task="Connect Scan" time="1668013495" percent="44.59" remaining="2004" etc="1668015499"/>
+<taskprogress task="Connect Scan" time="1668013723" percent="50.25" remaining="1822" etc="1668015545"/>
+<taskprogress task="Connect Scan" time="1668013957" percent="55.93" remaining="1635" etc="1668015591"/>
+<taskprogress task="Connect Scan" time="1668014185" percent="61.48" remaining="1443" etc="1668015628"/>
+<taskprogress task="Connect Scan" time="1668014398" percent="66.70" remaining="1256" etc="1668015654"/>
+<taskprogress task="Connect Scan" time="1668014614" percent="72.01" remaining="1062" etc="1668015676"/>
+<taskprogress task="Connect Scan" time="1668014821" percent="77.12" remaining="872" etc="1668015693"/>
+<taskprogress task="Connect Scan" time="1668015043" percent="82.35" remaining="678" etc="1668015720"/>
+<taskprogress task="Connect Scan" time="1668015247" percent="87.44" remaining="484" etc="1668015730"/>
+<taskprogress task="Connect Scan" time="1668015457" percent="92.48" remaining="291" etc="1668015747"/>
+<taskprogress task="Connect Scan" time="1668015661" percent="97.57" remaining="95" etc="1668015755"/>
+<taskend task="Connect Scan" time="1668015755" extrainfo="65535 total ports"/>
+<host starttime="1668011883" endtime="1668015755"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.95" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65534">
+<extrareasons reason="no-response" count="65534" proto="tcp" ports="1-8079,8081-65535"/>
+</extraports>
+<port protocol="tcp" portid="8080"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+</ports>
+<times srtt="44788" rttvar="21203" to="129600"/>
+</host>
+<runstats><finished time="1668015755" timestr="Wed Nov  9 18:42:35 2022" summary="Nmap done at Wed Nov  9 18:42:35 2022; 1 IP address (1 host up) scanned in 3872.03 seconds" elapsed="3872.03" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

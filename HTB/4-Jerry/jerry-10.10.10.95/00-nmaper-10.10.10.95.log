@@ -1,0 +1,43 @@
+----------| SCAN START |----------
+
+[*] Target => [1m[94m10.10.10.95[0m
+[*] Output Folder => [1m[94mjerry-10.10.10.95[0m
+[*] Min Rate => [1m[94m200[0m
+
+[*] Starting quick TCP scan
+[*] Starting default TCP scan
+----------| SCAN START |----------
+
+[*] Target => [1m[94m10.10.10.95[0m
+[*] Output Folder => [1m[94mjerry-10.10.10.95[0m
+[*] Min Rate => [1m[94m200[0m
+
+[*] Starting quick TCP scan
+[*] Starting default TCP scan
+[*] Starting full TCP scan
+----------| SCAN START |----------
+
+[*] Target => [1m[94m10.10.10.95[0m
+[*] Output Folder => [1m[94mjerry-10.10.10.95[0m
+[*] Min Rate => [1m[94m200[0m
+
+[*] Starting quick TCP scan
+[*] Starting default TCP scan
+[+] New Ports found: [1m[92m8080[0m
+[*] Starting full TCP scan
+[+] Ports found: [1m[92m8080[0m
+[*] Starting short UDP scan
+
+[*] Starting service fingerprinting
+[1m[94m
+PORT     STATE    SERVICE    VERSION
+8080/tcp filtered http-proxy[0m
+
+[*] Running NSE 'default', 'vuln' and 'safe' scripts
+[1m[94m
+PORT     STATE    SERVICE    VERSION
+8080/tcp filtered http-proxy[0m
+
+[*] Cleaning up
+
+----------| SCAN FINISHED in 3907 seconds |----------

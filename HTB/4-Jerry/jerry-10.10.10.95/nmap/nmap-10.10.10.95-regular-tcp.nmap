@@ -1,0 +1,10 @@
+# Nmap 7.92 scan initiated Wed Nov  9 17:37:54 2022 as: nmap -Pn -v --open -sT --min-rate 200 --max-retries 1 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-regular-tcp 10.10.10.95
+Nmap scan report for 10.10.10.95
+Host is up (0.044s latency).
+Not shown: 999 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+8080/tcp open  http-proxy
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Nov  9 17:38:03 2022 -- 1 IP address (1 host up) scanned in 8.68 seconds

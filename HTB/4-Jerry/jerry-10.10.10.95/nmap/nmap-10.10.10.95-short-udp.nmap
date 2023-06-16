@@ -1,0 +1,8 @@
+# Nmap 7.92 scan initiated Wed Nov  9 18:42:35 2022 as: nmap -Pn -v --open -T4 -sU --max-retries 1 --min-rate 200 -oA jerry-10.10.10.95/nmap/nmap-10.10.10.95-short-udp 10.10.10.95
+Nmap scan report for 10.10.10.95
+Host is up.
+All 1000 scanned ports on 10.10.10.95 are in ignored states.
+Not shown: 1000 open|filtered udp ports (no-response)
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Nov  9 18:42:46 2022 -- 1 IP address (1 host up) scanned in 10.79 seconds
