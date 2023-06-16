@@ -1,0 +1,11 @@
+# Nmap 7.94 scan initiated Thu Jun 15 22:13:28 2023 as: nmap -Pn -v --open -sT --min-rate 200 --max-retries 1 -oA Inject/nmap/nmap-10.10.11.204-regular-tcp 10.10.11.204
+Nmap scan report for 10.10.11.204
+Host is up (0.039s latency).
+Not shown: 995 closed tcp ports (conn-refused), 3 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+22/tcp   open  ssh
+8080/tcp open  http-proxy
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Thu Jun 15 22:13:28 2023 -- 1 IP address (1 host up) scanned in 0.82 seconds

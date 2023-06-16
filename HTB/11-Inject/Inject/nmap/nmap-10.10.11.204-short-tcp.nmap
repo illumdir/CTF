@@ -1,0 +1,10 @@
+# Nmap 7.94 scan initiated Thu Jun 15 22:13:27 2023 as: nmap -Pn -v --open -T4 -sT -F -oA Inject/nmap/nmap-10.10.11.204-short-tcp 10.10.11.204
+Nmap scan report for 10.10.11.204
+Host is up (0.084s latency).
+Not shown: 98 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+8080/tcp open  http-proxy
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Thu Jun 15 22:13:28 2023 -- 1 IP address (1 host up) scanned in 0.70 seconds

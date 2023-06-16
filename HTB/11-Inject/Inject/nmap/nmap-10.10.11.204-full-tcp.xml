@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94 scan initiated Thu Jun 15 22:13:29 2023 as: nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA Inject/nmap/nmap-10.10.11.204-full-tcp 10.10.11.204 -->
+<nmaprun scanner="nmap" args="nmap -Pn -v -&#45;open -T4 -sT -p- -&#45;max-retries 1 -&#45;max-rate 200 -oA Inject/nmap/nmap-10.10.11.204-full-tcp 10.10.11.204" start="1686860009" startstr="Thu Jun 15 22:13:29 2023" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1686860009"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1686860009"/>
+<taskbegin task="Connect Scan" time="1686860009"/>
+<taskprogress task="Connect Scan" time="1686860040" percent="9.43" remaining="298" etc="1686860338"/>
+<taskprogress task="Connect Scan" time="1686860070" percent="18.52" remaining="269" etc="1686860338"/>
+<taskprogress task="Connect Scan" time="1686860100" percent="27.67" remaining="238" etc="1686860338"/>
+<taskprogress task="Connect Scan" time="1686860130" percent="36.82" remaining="208" etc="1686860338"/>
+<taskprogress task="Connect Scan" time="1686860160" percent="45.98" remaining="178" etc="1686860337"/>
+<taskprogress task="Connect Scan" time="1686860161" percent="46.49" remaining="175" etc="1686860336"/>
+<taskprogress task="Connect Scan" time="1686860191" percent="55.44" remaining="147" etc="1686860337"/>
+<taskprogress task="Connect Scan" time="1686860221" percent="64.58" remaining="117" etc="1686860337"/>
+<taskprogress task="Connect Scan" time="1686860251" percent="73.74" remaining="87" etc="1686860337"/>
+<taskprogress task="Connect Scan" time="1686860281" percent="82.82" remaining="57" etc="1686860337"/>
+<taskend task="Connect Scan" time="1686860338" extrainfo="65535 total ports"/>
+<host starttime="1686860009" endtime="1686860338"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.204" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65408">
+<extrareasons reason="conn-refused" count="65408" proto="tcp" ports="1-21,23-224,226-582,584-689,691-883,885-1065,1067-1788,1790-1796,1798-2141,2143-2206,2208-2960,2962-3081,3083-3759,3761-4261,4263-4815,4817-4884,4886-5039,5041-5324,5326-6347,6349-6663,6665-6719,6721-6818,6820-7134,7136-7216,7218-7237,7239-7487,7489-7508,7510-7720,7722-8034,8036-8054,8056-8072,8074-8079,8081-8430,8432-8618,8620-8626,8628-9578,9580-10199,10201-10506,10508-10865,10867-11496,11498-12118,12120-14796,14798-15048,15050-15251,15253-16706,16708-16742,16744-16878,16880-17927,17929-19955,19957-20061,20063-20897,20899-21757,21759-22631,22633-24113,24115-24509,24511-24727,24729-25092,25094-25830,25832-26559,26561-26994,26996-27004,27006-28088,28090-28225,28227-29399,29401-29550,29552-29811,29813-29885,29887-30771,30773-32016,32018-33175,33177-34447,34449-34660,34662-34664,34666-35673,35675-35925,35927-36350,36352-36587,36589-37195,37197-37925,37927-37962,37964-40851,40853-41103,41105-41432,41434-41503,41505-41576,41578-41968,41970-42317,42319-44718,44720-45512,45514-45584,45586-45633,45635-45763,45765-46397,46399-46501,46503-47754,47756-48124,48126-49682,49684-50616,50618-51251,51253-51300,51302-52826,52828-53422,53424-53648,53650-54003,54005-55268,55270-56075,56077-56090,56092-56763,56765-57217,57219-57915,57917-58042,58044-58135,58137-58590,58592-59015,59017-59812,59814-59933,59935-59937,59939-60064,60066-60120,60122-60270,60272-60746,60748-60777,60779-60956,60958-61041,61043-61627,61629-62820,62822-63697,63699-65535"/>
+</extraports>
+<extraports state="filtered" count="125">
+<extrareasons reason="no-response" count="125" proto="tcp" ports="225,583,690,884,1066,1789,1797,2142,2207,2961,3082,3760,4262,4816,4885,5040,5325,6348,6664,6720,6819,7135,7217,7238,7488,7509,7721,8035,8055,8073,8431,8619,8627,9579,10200,10507,10866,11497,12119,14797,15049,15252,16707,16743,16879,17928,19956,20062,20898,21758,22632,24114,24510,24728,25093,25831,26560,26995,27005,28089,28226,29400,29551,29812,29886,30772,32017,33176,34448,34661,34665,35674,35926,36351,36588,37196,37926,37963,40852,41104,41433,41504,41577,41969,42318,44719,45513,45585,45634,45764,46398,46502,47755,48125,49683,50617,51252,51301,52827,53423,53649,54004,55269,56076,56091,56764,57218,57916,58043,58136,58591,59016,59813,59934,59938,60065,60121,60271,60747,60778,60957,61042,61628,62821,63698"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8080"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http-proxy" method="table" conf="3"/></port>
+</ports>
+<times srtt="68053" rttvar="8221" to="100937"/>
+</host>
+<runstats><finished time="1686860338" timestr="Thu Jun 15 22:18:58 2023" summary="Nmap done at Thu Jun 15 22:18:58 2023; 1 IP address (1 host up) scanned in 329.20 seconds" elapsed="329.20" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
