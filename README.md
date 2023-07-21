@@ -85,6 +85,10 @@ https://whatsmyname.app/ : recherche de compte a partir d'un pseudo
 
 GTFOBins : Exploit de binaire Linux => https://gtfobins.github.io/
 
+GitHub - s0md3v/Arjun: HTTP parameter discovery suite.
+
+
+
 
 ------Reverse Shell -----
 rlwrap -caR nc -lvnp $port : Ecoute et stabilise le shell
@@ -161,6 +165,11 @@ windapsearch : Recherche sur LDAP (si soucis d'installation faire :
 sudo pip2 install ldap3 
 sudo apt install python3-ldap 
 ```
+Ad attack :
+
+- MITM6 / Responder
+- BlueKeep
+- PetitPotam
 
 # MSFCONSOLE
 
